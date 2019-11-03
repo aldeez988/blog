@@ -9,5 +9,7 @@ class PostList extends Component {
     return (<div>Post List</div>);
   }
 }
- 
-export default connect(null, {fetchPosts: fetchPosts})(PostList);
+ const mapStateToProps = ({posts})=>{
+  return {posts}
+ }
+export default connect(mapStateToProps, {fetchPosts})(PostList);
